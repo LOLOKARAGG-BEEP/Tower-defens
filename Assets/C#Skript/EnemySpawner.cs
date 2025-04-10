@@ -4,6 +4,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public Transform spawnPoint;
+    public Transform[] waypoints;
     public float spawnInterval = 2f;
 
     void Start()
@@ -12,12 +13,9 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy()
-{
-    GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-    Enemy enemyScript = enemyObj.GetComponent<Enemy>();
-
-    // Вказуємо ціль (наприклад, башню)
-    enemyScript.target = GameObject.FindWithTag("Tower").transform;
-}
-
+    {
+        GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        Enemy enemyScript = enemyObj.GetComponent<Enemy>();
+        enemyScript.SetWaypoints(waypoints);
+    }
 }
