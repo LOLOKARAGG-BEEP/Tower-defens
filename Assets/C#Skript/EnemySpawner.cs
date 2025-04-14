@@ -12,12 +12,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy()
-{
-    GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-    Enemy enemyScript = enemyObj.GetComponent<Enemy>();
-
-    // Вказуємо ціль (наприклад, башню)
-    enemyScript.target = GameObject.FindWithTag("Tower").transform;
-}
-
+    {
+        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+    }
 }
