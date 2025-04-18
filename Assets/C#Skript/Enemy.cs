@@ -34,9 +34,8 @@ public class Enemy : MonoBehaviour
 
         agent.SetDestination(target.position);
 
-        // Перевірка дистанції до башти
         float distance = Vector3.Distance(transform.position, target.position);
-        if (distance <= 1.5f) // радіус досягнення башти
+        if (distance <= 1.5f)
         {
             EndGame();
         }
@@ -62,6 +61,13 @@ public class Enemy : MonoBehaviour
         agent.isStopped = true;
         anim.SetBool("Run", false);
         anim.SetTrigger("Die");
+
+        // ✅ Додаємо монету за вбивство
+        if (CoinManager.instance != null)
+        {
+            CoinManager.instance.AddCoin();
+        }
+
         StartCoroutine(DestroyAfterDelay(deathDelay));
     }
 
@@ -74,7 +80,6 @@ public class Enemy : MonoBehaviour
     void EndGame()
     {
         Debug.Log("Game Over! Enemy reached the tower.");
-        // тут можеш додати UI, сцену поразки тощо
         Time.timeScale = 0f;
     }
 }
