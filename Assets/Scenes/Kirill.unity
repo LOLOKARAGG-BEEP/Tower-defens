@@ -141,9 +141,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1424043618734702342, guid: 044ea848f6f111a489662a7ff723b308, type: 3}
   firePoint: {fileID: 205731239}
-  fireForce: 20
-  fireRate: 1
-  detectionRadius: 10
+  fireForce: 10
+  fireRate: 1.5
+  detectionRadius: 7
 --- !u!4 &205731239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ed9657ac048f1c4885ad89152c8266d, type: 3}
@@ -954,8 +954,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5915073534372818354, guid: d2d109448f0b83b488bfc7681f88bb3a, type: 3}
   firePoint: {fileID: 895257042}
   fireForce: 20
-  fireRate: 1
-  detectionRadius: 10
+  fireRate: 2.5
+  detectionRadius: 7
 --- !u!4 &895257042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11cccb415dbec734cae0c45b59448314, type: 3}
@@ -980,9 +980,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6870889546527449629, guid: a75178095ccbe864eb7dbdc09f365a56, type: 3}
   firePoint: {fileID: 909714270}
-  fireForce: 20
-  fireRate: 1
-  detectionRadius: 10
+  fireForce: 15
+  fireRate: 2
+  detectionRadius: 7
 --- !u!4 &909714270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b7496d309adbb4840bfcfe7d7cfffb4e, type: 3}
@@ -2345,10 +2345,10 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1919782175742502619, guid: f22b4e0d81ccb8549b559c8a0d13c121, type: 3}
   spawnPoint: {fileID: 225463584}
   timeBetweenWaves: 5
-  initialSpawnInterval: 1
+  initialSpawnInterval: 2
   numberOfWaves: 3
   enemiesInFirstWave: 10
-  spawnIntervalDecreasePerWave: 0.4
+  spawnIntervalDecreasePerWave: 1
 --- !u!4 &1740080501
 Transform:
   m_ObjectHideFlags: 0
@@ -2395,7 +2395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -27375,7 +27375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1379646976536836014, guid: f22b4e0d81ccb8549b559c8a0d13c121, type: 3}
       propertyPath: deathDelay
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1919782175742502619, guid: f22b4e0d81ccb8549b559c8a0d13c121, type: 3}
       propertyPath: m_Name
