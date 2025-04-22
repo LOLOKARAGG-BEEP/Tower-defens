@@ -20,25 +20,25 @@ public class EnemySpawner : MonoBehaviour
     }
 
     IEnumerator SpawnWaves()
+{
+    while (currentWave < numberOfWaves)
     {
-        while (currentWave < numberOfWaves)
+        currentWave++;
+        int enemiesToSpawn = enemiesInFirstWave + (currentWave - 1) * 2;
+        float currentSpawnInterval = Mathf.Max(0.2f, initialSpawnInterval - spawnIntervalDecreasePerWave * (currentWave - 1));
+
+        GameManager.instance.StartWave(enemiesToSpawn); // 🟢 Повідомляємо GameManager
+
+        for (int i = 0; i < enemiesToSpawn; i++)
         {
-            currentWave++;
-            int enemiesToSpawn = enemiesInFirstWave + (currentWave - 1) * 2;
-            float currentSpawnInterval = Mathf.Max(0.2f, initialSpawnInterval - spawnIntervalDecreasePerWave * (currentWave - 1)); // не меньше 0.2 сек
-
-            Debug.Log("Wave " + currentWave + " started. Spawn interval: " + currentSpawnInterval);
-
-            for (int i = 0; i < enemiesToSpawn; i++)
-            {
-                Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-                yield return new WaitForSeconds(currentSpawnInterval);
-            }
-
-            Debug.Log("Wave " + currentWave + " completed!");
-            yield return new WaitForSeconds(timeBetweenWaves);
+            Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+            yield return new WaitForSeconds(currentSpawnInterval);
         }
 
-        Debug.Log("All waves completed!");
+        yield return new WaitForSeconds(timeBetweenWaves);
     }
+
+    Debug.Log("All waves completed!");
+}
+
 }
