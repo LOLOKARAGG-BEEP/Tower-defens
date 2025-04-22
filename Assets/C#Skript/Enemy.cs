@@ -55,6 +55,8 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        
+
         if (isDead) return;
         isDead = true;
 
@@ -67,6 +69,8 @@ public class Enemy : MonoBehaviour
         {
             CoinManager.instance.AddCoin();
         }
+        GameManager.instance.EnemyDied();
+
 
         StartCoroutine(DestroyAfterDelay(deathDelay));
     }
@@ -79,7 +83,7 @@ public class Enemy : MonoBehaviour
 
     void EndGame()
     {
-        Debug.Log("Game Over! Enemy reached the tower.");
-        Time.timeScale = 0f;
+        GameManager.instance.EnemyReachedTower();
+
     }
 }
