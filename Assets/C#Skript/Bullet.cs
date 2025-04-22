@@ -1,26 +1,48 @@
 using UnityEngine;
+using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
     public float damage = 25f;
+    public float speed = 20f;
     public float lifeTime = 5f;
+
+    private Transform target;
+
+    public void SetTarget(Transform enemyTarget)
+    {
+        target = enemyTarget;
+    }
 
     void Start()
     {
-        Destroy(gameObject, lifeTime); // знищити кулю через кілька секунд
+        Destroy(gameObject, lifeTime);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void Update()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (target == null)
         {
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector3 direction = (target.position - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
+        transform.LookAt(target);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
             }
-        }
 
-        Destroy(gameObject); // куля знищується після удару
+            Destroy(gameObject);
+        }
     }
 }

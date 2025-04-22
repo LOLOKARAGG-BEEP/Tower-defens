@@ -54,14 +54,14 @@ public class TurretSimpleTarget : MonoBehaviour
 
     void Shoot(Vector3 direction)
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(direction));
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-
-        if (rb != null)
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
         {
-            rb.velocity = direction * fireForce;
+            bulletScript.SetTarget(currentTarget.transform);
         }
     }
+
 
     void OnDrawGizmosSelected()
     {
@@ -69,5 +69,3 @@ public class TurretSimpleTarget : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }
-
-
