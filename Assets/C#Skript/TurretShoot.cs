@@ -9,15 +9,20 @@ public class TurretSimpleTarget : MonoBehaviour
     public float detectionRadius = 10f;
 
     private float nextFireTime = 0f;
+    private GameObject currentTarget;
 
     void Update()
     {
-        GameObject target = FindClosestEnemy();
-
-        if (target != null)
+        // Проверяем, жив ли текущий враг и в зоне ли он
+        if (currentTarget == null || Vector3.Distance(transform.position, currentTarget.transform.position) > detectionRadius)
         {
-            Vector3 direction = (target.transform.position - transform.position).normalized;
-            direction.y = 0; // не нахилятись по вертикалі
+            currentTarget = FindClosestEnemy();
+        }
+
+        if (currentTarget != null)
+        {
+            Vector3 direction = (currentTarget.transform.position - transform.position).normalized;
+            direction.y = 0; // Не вращать по вертикали
             transform.rotation = Quaternion.LookRotation(direction);
 
             if (Time.time >= nextFireTime)
@@ -64,4 +69,5 @@ public class TurretSimpleTarget : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }
+
 
