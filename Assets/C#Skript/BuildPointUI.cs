@@ -3,12 +3,11 @@ using UnityEngine.UI;
 
 public class BuildPointUI : MonoBehaviour
 {
-    public GameObject[] turretPrefabs;         // Префаби турелей: [0] - 8 монет, [1] - 10, [2] - 12
-    public int[] turretCosts = { 8, 10, 12 };   // Вартість кожної турелі
-    public GameObject uiPanel;                 // Панель вибору турелі
+    public GameObject[] turretPrefabs;         
+    public int[] turretCosts = { 8, 10, 12 };  
+    public GameObject uiPanel;                 
 
-    private BuildPoint currentPoint;           // Поточна точка, на якій будуємо
-
+    private BuildPoint currentPoint;           
     public void ShowUI(BuildPoint point)
     {
         currentPoint = point;

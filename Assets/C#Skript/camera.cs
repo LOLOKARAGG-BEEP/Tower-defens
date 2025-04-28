@@ -38,7 +38,7 @@ public class FreeCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             direction += transform.right;
 
-        direction.y = 0; // Щоб не літала вгору-вниз
+        direction.y = 0; 
 
         transform.position += direction.normalized * moveSpeed * Time.deltaTime;
     }
@@ -58,7 +58,7 @@ public class FreeCamera : MonoBehaviour
         {
             yaw += Input.GetAxis("Mouse X") * rotationSpeed;
             pitch -= Input.GetAxis("Mouse Y") * rotationSpeed;
-            pitch = Mathf.Clamp(pitch, 10f, 80f); // щоб не переверталась
+            pitch = Mathf.Clamp(pitch, 10f, 80f); 
 
             transform.rotation = Quaternion.Euler(pitch, yaw, 0f);
         }

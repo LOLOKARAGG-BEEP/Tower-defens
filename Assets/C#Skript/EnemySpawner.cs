@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
         int enemiesToSpawn = enemiesInFirstWave + (currentWave - 1) * 2;
         float currentSpawnInterval = Mathf.Max(0.2f, initialSpawnInterval - spawnIntervalDecreasePerWave * (currentWave - 1));
 
-        GameManager.instance.StartWave(enemiesToSpawn); // 🟢 Повідомляємо GameManager
+        GameManager.instance.StartWave(enemiesToSpawn); 
 
         for (int i = 0; i < enemiesToSpawn; i++)
         {

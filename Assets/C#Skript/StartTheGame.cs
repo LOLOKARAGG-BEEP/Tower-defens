@@ -26,19 +26,19 @@ public class StartTheGame : MonoBehaviour
     public void Play1()
     {
         SceneManager.LoadScene("Nikita");
-        //SceneManager.LoadScene(0)
+        
     }
 
     public void Play2()
     {
         SceneManager.LoadScene("Max");
-        //SceneManager.LoadScene(1)
+      
     }
 
     public void Play3()
     {
         SceneManager.LoadScene("Kirill");
-        //SceneManager.LoadScene(2)
+       
     }
     public void Settings()
     {

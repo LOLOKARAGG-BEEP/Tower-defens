@@ -19,7 +19,7 @@ public class CoinManager : MonoBehaviour
         coinText.text = "Coins: " + coins.ToString();
     }
 
-    // ✅ Методи МАЮТЬ бути всередині класу:
+    
     public bool HasCoins(int amount)
     {
         return coins >= amount;
