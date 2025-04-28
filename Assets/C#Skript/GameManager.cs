@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public void StartWave(int enemies)
     {
         currentWave++;
-        enemiesAlive += enemies; // 🟡 Додаємо ворогів до лічильника
+        enemiesAlive += enemies;
     }
 
     public void EnemyDied()
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
         if (enemiesAlive <= 0 && currentWave >= totalWaves)
         {
-            Win(); // 🟢 Перемога лише коли ВСІ вороги вбиті
+            Win(); 
         }
     }
 
