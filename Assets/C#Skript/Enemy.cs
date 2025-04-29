@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
         anim.SetBool("Run", false);
         anim.SetTrigger("Die");
 
-        // ✅ Додаємо монету за вбивство
+        
         if (CoinManager.instance != null)
         {
             CoinManager.instance.AddCoin();
