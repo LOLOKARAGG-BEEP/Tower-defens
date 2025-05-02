@@ -9,7 +9,7 @@ public class UIButtonSound : MonoBehaviour
 
     void Start()
     {
-        // Ищем или создаем AudioSource
+       
         audioSource = FindObjectOfType<AudioSource>();
         if (audioSource == null)
         {
@@ -18,7 +18,6 @@ public class UIButtonSound : MonoBehaviour
             DontDestroyOnLoad(audioObj);
         }
 
-        // Подключаем событие клика
         GetComponent<Button>().onClick.AddListener(PlayClick);
     }
 
