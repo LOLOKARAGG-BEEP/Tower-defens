@@ -62,18 +62,20 @@ public class NastroykiIgry : MonoBehaviour
 
     public void LoadSettings(int currentResolutionIndex)
     {
-        if (PlayerPrefs.HasKey("QualitySettingsPreference"));
-        qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingsPreference");
+        if (PlayerPrefs.HasKey("QualitySettingsPreference"))
+            qualityDropdown.value = PlayerPrefs.GetInt("QualitySettingsPreference");
         else
             qualityDropdown.value = 3;
 
-        if (PlayerPrefs.HasKey("ResolutionPreference")) ;
-        resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
+        if (PlayerPrefs.HasKey("ResolutionPreference"))
+            resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
         else
-        resolutionDropdown.value = currentResolutionIndex;
+            resolutionDropdown.value = currentResolutionIndex;
 
-        if (PlayerPrefs.HasKey("FullscreenPreference")) ;
-        Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscrenePreference");
+        if (PlayerPrefs.HasKey("FullscreenPreference"))
+        {
+            Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscrenePreference"));
+        }
         else
             Screen.fullScreen = true;
     }
