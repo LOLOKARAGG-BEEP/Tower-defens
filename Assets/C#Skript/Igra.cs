@@ -14,6 +14,12 @@ public class Igra : MonoBehaviour
         SceneManager.LoadScene("Kirill");
     }
 
+    public void Settings()
+    {
+        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene(1)
+    }
+
     public void Play2()
     {
         if (panelSettings.activeSelf == false)
