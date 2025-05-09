@@ -13,7 +13,7 @@ public class TurretSimpleTarget : MonoBehaviour
 
     void Update()
     {
-        // Проверяем, жив ли текущий враг и в зоне ли он
+        
         if (currentTarget == null || Vector3.Distance(transform.position, currentTarget.transform.position) > detectionRadius)
         {
             currentTarget = FindClosestEnemy();
@@ -22,7 +22,7 @@ public class TurretSimpleTarget : MonoBehaviour
         if (currentTarget != null)
         {
             Vector3 direction = (currentTarget.transform.position - transform.position).normalized;
-            direction.y = 0; // Не вращать по вертикали
+            direction.y = 0;
             transform.rotation = Quaternion.LookRotation(direction);
 
             if (Time.time >= nextFireTime)

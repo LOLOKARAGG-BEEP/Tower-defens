@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Kirill.unity
-    guid: 84bc9ca7d4704ac4bad195087ae64f4e
-  - enabled: 1
-    path: Assets/Scenes/Max.unity
-    guid: e8580834d9065ac40a9870b3e2cea29b
-  - enabled: 1
     path: Assets/Scenes/Nikita.unity
     guid: e02b693fbe190ba4b8024aecd48e47c3
+  - enabled: 1
+    path: Assets/Scenes/Kirill.unity
+    guid: 84bc9ca7d4704ac4bad195087ae64f4e
   m_configObjects: {}
